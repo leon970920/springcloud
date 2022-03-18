@@ -1,0 +1,17 @@
+server:
+  port: 7001
+
+eureka:
+  instance:
+    #eureka服务端实例名称  单机版
+    #hostname: localhost
+    #eureka服务端实例名称 集群版
+    hostname: eureka7001.com
+  client:
+    register-with-eureka: false #false表示不向服务端注册自己
+    fetch-registry: false #false表示自己端就是服务注册中心，职责就是维护服务实例，不需要去检索服务
+    service-url:
+      #设置与Eureka Server交互的地址。查询服务和注册服务都需要依赖这个地址 单机版
+      #defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+      #设置与Eureka Server交互的地址。查询服务和注册服务都需要依赖这个地址 集群版（填入其他Eureka Server的地址） 相互注册、相互守望
+      defaultZone: http://eureka7002.com:7002/eureka/

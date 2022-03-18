@@ -1,0 +1,14 @@
+server:
+  port: 8006
+
+spring:
+  #注册到zookeeper中的服务名
+  application:
+    name: cloud-provider-service
+  #consul地址
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        service-name: ${spring.application.name}
