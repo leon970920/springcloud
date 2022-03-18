@@ -44,4 +44,10 @@ public class PaymentController {
             return new CommonResult(444, "没有对应记录，查询ID:,serverPort:  "+serverPort + id);
         }
     }
+
+    //返回负载均衡获取到的服务器端口
+    @GetMapping(value = "/payment/lb")
+    public Integer getPaymentLB() {
+        return serverPort;
+    }
 }
