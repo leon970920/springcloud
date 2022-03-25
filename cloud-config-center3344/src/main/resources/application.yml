@@ -32,3 +32,17 @@ spring:
 
       #读取分支
       lable: master
+
+#RabbitMq相关配置
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+#actuator 配置RabbitMq相关 暴露bus刷新配置的端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: 'bus-refresh'
